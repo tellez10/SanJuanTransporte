@@ -9,11 +9,11 @@ namespace SanJuanTransporte.Models
         [Key]
         public int Id { get; set; }
         [Required]
-        public String? Email { get; set; }
+        public string? Email { get; set; }
         [Required]
         public string? Password { get; set; }
         [Required]
-        public int NombreCompleto { get; set; }
+        public string? NombreCompleto { get; set; }
         public string? Foto { get; set; }
         [Required]
         public  RolEnum Rol { get; set; }
