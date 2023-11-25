@@ -1,7 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+using SanJuanTransporte.Context;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+//-------------------------
+builder.Services.AddDbContext<MiContext>(options => {
+    options.UseSqlServer(builder.Configuration.GetConnectionString("CadenaConexion"));
+});
 
 var app = builder.Build();
 
