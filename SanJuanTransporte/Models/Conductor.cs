@@ -8,15 +8,15 @@ namespace SanJuanTransporte.Models
     {
         [Key]
         public int Id { get; set; }
-        [Required]
+        [Required, MinLength (6), MaxLength(10)]
         public int CI { get; set; }
-        [Required]
+        [Required, MinLength(6), MaxLength(30)]
         public string? CodigoConstructor { get; set; }
-        [Required]
+        [Required, MinLength(6), MaxLength(10)]
         public string? Direccion { get; set; }
-        [Required]
+        [Required, MinLength(6), MaxLength(10)]
         public string? Email { get; set; }
-        [Required]
+        [Required, MinLength(5), MaxLength(50)]
         public string? NombreCompleto { get; set; }
         [Required]
         public int NumeroLicencia { get; set; }
@@ -26,9 +26,9 @@ namespace SanJuanTransporte.Models
         // dolo de ayuda para cargar la foto
         [NotMapped]
         [Display(Name="Cargar Foto")]
-        public IFormFile? FotoFile { get; set; }// caragar la foto
-
-
+        public IFormFile? FotoFile { get; set; }// cargar la foto
+        // RELACIONES
+        public virtual List<Pago>? Pagos { get; set; }
 
     }
 }

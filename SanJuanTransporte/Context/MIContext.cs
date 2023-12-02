@@ -12,6 +12,7 @@ namespace SanJuanTransporte.Context
         //estas clases persistemtes se van ha tranformar en tablas en base de datos
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Conductor> Conductor { get; set; }
+        public DbSet<Conductor> Pago { get; set; }
 
     }
 }

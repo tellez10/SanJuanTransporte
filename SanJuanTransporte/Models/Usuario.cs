@@ -6,13 +6,13 @@ namespace SanJuanTransporte.Models
 {
     public class Usuario
     {
-        [Key]
+        [Key] //data notations
         public int Id { get; set; }
-        [Required]
+        [Required, MinLength(5), MaxLength(50)]
         public string? Email { get; set; }
-        [Required]
+        [Required, MinLength(5), MaxLength(50)]
         public string? Password { get; set; }
-        [Required]
+        [Required, MinLength(5), MaxLength(50)]
         public string? NombreCompleto { get; set; }
         public string? Foto { get; set; }
         [Required]
@@ -21,6 +21,8 @@ namespace SanJuanTransporte.Models
         [NotMapped]
         [Display(Name = "Cargar Foto")]
         public IFormFile? FotoFile { get; set; }// caragar la foto
+        // RELACIONES
+        public virtual List<Pago>? Pagos { get; set; }
 
 
     }

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SanJuanTransporte.Context;
 
@@ -11,9 +12,11 @@ using SanJuanTransporte.Context;
 namespace SanJuanTransporte.Migrations
 {
     [DbContext(typeof(MiContext))]
-    partial class MiContextModelSnapshot : ModelSnapshot
+    [Migration("20231130042409_TerceraMigracion")]
+    partial class TerceraMigracion
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
