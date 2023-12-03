@@ -16,6 +16,26 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Usuario\Desktop\Nueva carpeta (2)\SanJuanTransporte\SanJuanTransporte
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Usuario/Desktop/Nueva carpeta (2)/SanJuanTransporte/SanJuanTransporte/Views/Aportes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBvcnRlc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Usuario/Desktop/Nueva carpeta (2)/SanJuanTransporte/SanJuanTransporte/Views/Aportes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBvcnRlc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Usuario/Desktop/Nueva carpeta (2)/SanJuanTransporte/SanJuanTransporte/Views/Aportes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBvcnRlc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Usuario/Desktop/Nueva carpeta (2)/SanJuanTransporte/SanJuanTransporte/Views/Aportes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBvcnRlc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Usuario/Desktop/Nueva carpeta (2)/SanJuanTransporte/SanJuanTransporte/Views/Aportes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBvcnRlc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Usuario/Desktop/Nueva carpeta (2)/SanJuanTransporte/SanJuanTransporte/Views/Conductors/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uZHVjdG9yc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -46,6 +66,26 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Usuario/Desktop/Nueva carpeta (2)/SanJuanTransporte/SanJuanTransporte/Views/LogIn/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9nSW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Usuario/Desktop/Nueva carpeta (2)/SanJuanTransporte/SanJuanTransporte/Views/Pagoes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnb2VzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Usuario/Desktop/Nueva carpeta (2)/SanJuanTransporte/SanJuanTransporte/Views/Pagoes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnb2VzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Usuario/Desktop/Nueva carpeta (2)/SanJuanTransporte/SanJuanTransporte/Views/Pagoes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnb2VzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Usuario/Desktop/Nueva carpeta (2)/SanJuanTransporte/SanJuanTransporte/Views/Pagoes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnb2VzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Usuario/Desktop/Nueva carpeta (2)/SanJuanTransporte/SanJuanTransporte/Views/Pagoes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnb2VzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Usuario/Desktop/Nueva carpeta (2)/SanJuanTransporte/SanJuanTransporte/Views/Shared/Error.cshtml]

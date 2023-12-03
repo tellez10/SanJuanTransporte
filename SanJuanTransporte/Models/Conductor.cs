@@ -1,5 +1,4 @@
-﻿using SanJuanTransporte.Dtos;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SanJuanTransporte.Models
@@ -11,8 +10,6 @@ namespace SanJuanTransporte.Models
         [Required, MinLength (6), MaxLength(10)]
         public int CI { get; set; }
         [Required, MinLength(6), MaxLength(30)]
-        public string? CodigoConstructor { get; set; }
-        [Required, MinLength(6), MaxLength(10)]
         public string? Direccion { get; set; }
         [Required, MinLength(6), MaxLength(10)]
         public string? Email { get; set; }
@@ -29,6 +26,5 @@ namespace SanJuanTransporte.Models
         public IFormFile? FotoFile { get; set; }// cargar la foto
         // RELACIONES
         public virtual List<Pago>? Pagos { get; set; }
-
     }
 }

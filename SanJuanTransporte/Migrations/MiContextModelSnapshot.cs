@@ -66,7 +66,7 @@ namespace SanJuanTransporte.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Conductor");
+                    b.ToTable("Conductor", (string)null);
                 });
 
             modelBuilder.Entity("SanJuanTransporte.Models.Pago", b =>
@@ -98,7 +98,7 @@ namespace SanJuanTransporte.Migrations
 
                     b.HasIndex("UsuarioId");
 
-                    b.ToTable("Pago");
+                    b.ToTable("Pago", (string)null);
                 });
 
             modelBuilder.Entity("SanJuanTransporte.Models.Usuario", b =>
@@ -132,7 +132,7 @@ namespace SanJuanTransporte.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Usuarios");
+                    b.ToTable("Usuarios", (string)null);
                 });
 
             modelBuilder.Entity("SanJuanTransporte.Models.Pago", b =>

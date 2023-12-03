@@ -1,5 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using SanJuanTransporte.Dtos;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+
 
 namespace SanJuanTransporte.Models
 {
@@ -10,8 +12,10 @@ namespace SanJuanTransporte.Models
         [Required]
         [Column(TypeName = "date")]
         public DateTime Fecha { get; set; }
-        public uint?Numero { get; set; }
+        public uint? Numero { get; set; }
+        [Required]
         public string? Detalle { get; set; }
+        [Required]
         public decimal Monto { get; set; }
 
         // RELACIONES, foreign key
