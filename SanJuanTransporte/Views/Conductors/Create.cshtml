@@ -1,65 +1,73 @@
 ﻿@model SanJuanTransporte.Models.Conductor
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "CREAR CONDUCTOR";
 }
 
-<h1>Create</h1>
+<h1>Crear Conductor</h1>
 
-<h4>Conductor</h4>
+<h4>Datos del Conductor</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
             <div class="form-group">
-                <label asp-for="CI" class="control-label"></label>
+                <label asp-for="CI" class="control-label">Cédula de Identidad</label>
                 <input asp-for="CI" class="form-control" />
                 <span asp-validation-for="CI" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="CodigoConstructor" class="control-label"></label>
+                <label asp-for="CodigoConstructor" class="control-label">Código del Constructor</label>
                 <input asp-for="CodigoConstructor" class="form-control" />
                 <span asp-validation-for="CodigoConstructor" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="Direccion" class="control-label"></label>
+                <label asp-for="Direccion" class="control-label">Dirección</label>
                 <input asp-for="Direccion" class="form-control" />
                 <span asp-validation-for="Direccion" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
+                <label asp-for="Email" class="control-label">Correo Electrónico</label>
                 <input asp-for="Email" class="form-control" />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="NombreCompleto" class="control-label"></label>
+                <label asp-for="NombreCompleto" class="control-label">Nombre Completo</label>
                 <input asp-for="NombreCompleto" class="form-control" />
                 <span asp-validation-for="NombreCompleto" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="NumeroLicencia" class="control-label"></label>
+                <label asp-for="NumeroLicencia" class="control-label">Número de Licencia</label>
                 <input asp-for="NumeroLicencia" class="form-control" />
                 <span asp-validation-for="NumeroLicencia" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="NumeroPlaca" class="control-label"></label>
+                <label asp-for="NumeroPlaca" class="control-label">Número de Placa</label>
                 <input asp-for="NumeroPlaca" class="form-control" />
                 <span asp-validation-for="NumeroPlaca" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="Foto" class="control-label"></label>
+                <label asp-for="Foto" class="control-label">URL de la Foto</label>
                 <input asp-for="Foto" class="form-control" />
                 <span asp-validation-for="Foto" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Crear Conductor" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Volver a la Lista</a>
 </div>
-
