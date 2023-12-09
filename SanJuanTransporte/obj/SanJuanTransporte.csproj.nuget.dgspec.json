@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Usuario\\Desktop\\Nueva carpeta (2)\\SanJuanTransporte\\SanJuanTransporte\\SanJuanTransporte.csproj": {}
+    "D:\\ACT-PROYECTO\\sjp\\SanJuanTransporte\\SanJuanTransporte\\SanJuanTransporte.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Usuario\\Desktop\\Nueva carpeta (2)\\SanJuanTransporte\\SanJuanTransporte\\SanJuanTransporte.csproj": {
+    "D:\\ACT-PROYECTO\\sjp\\SanJuanTransporte\\SanJuanTransporte\\SanJuanTransporte.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\Nueva carpeta (2)\\SanJuanTransporte\\SanJuanTransporte\\SanJuanTransporte.csproj",
+        "projectUniqueName": "D:\\ACT-PROYECTO\\sjp\\SanJuanTransporte\\SanJuanTransporte\\SanJuanTransporte.csproj",
         "projectName": "SanJuanTransporte",
-        "projectPath": "C:\\Users\\Usuario\\Desktop\\Nueva carpeta (2)\\SanJuanTransporte\\SanJuanTransporte\\SanJuanTransporte.csproj",
+        "projectPath": "D:\\ACT-PROYECTO\\sjp\\SanJuanTransporte\\SanJuanTransporte\\SanJuanTransporte.csproj",
         "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Usuario\\Desktop\\Nueva carpeta (2)\\SanJuanTransporte\\SanJuanTransporte\\obj\\",
+        "outputPath": "D:\\ACT-PROYECTO\\sjp\\SanJuanTransporte\\SanJuanTransporte\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -92,7 +93,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }
