@@ -1,14 +1,14 @@
 ﻿@model SanJuanTransporte.Models.Conductor
 
 @{
-    ViewData["Title"] = "Eliminar";
+    ViewData["Title"] = "Delete";
 }
 
-<h1>Eliminar</h1>
+<h1>Eliminar Conductor</h1>
 
 <h3>¿Estás seguro de que quieres eliminar esto?</h3>
 <div>
-    <h4>Conductor</h4>
+    <h4>Detalles del Conductor</h4>
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
@@ -16,12 +16,6 @@
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.CI)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.CodigoConstructor)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.CodigoConstructor)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Direccion)
@@ -61,9 +55,9 @@
         </dd>
     </dl>
 
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="Id" />
-        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
-        <a asp-action="Index">Volver</a>
+    <form asp-action="Delete" method="post">
+        <input type="hidden" asp-for="ConductorId" />
+        <button type="submit" class="btn btn-danger">Eliminar</button> |
+        <a asp-action="Index" class="btn btn-secondary">Volver al Listado</a>
     </form>
 </div>

@@ -5,12 +5,40 @@
       "PackagePath": "staticwebassets\\SanJuanTransporte.bundle.scp.css"
     },
     {
+      "Id": "D:\\ACT-PROYECTO\\SanJuanTransporte\\SanJuanTransporte\\wwwroot\\css\\image-rotation.css",
+      "PackagePath": "staticwebassets\\css\\image-rotation.css"
+    },
+    {
       "Id": "D:\\ACT-PROYECTO\\SanJuanTransporte\\SanJuanTransporte\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
       "Id": "D:\\ACT-PROYECTO\\SanJuanTransporte\\SanJuanTransporte\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\ACT-PROYECTO\\SanJuanTransporte\\SanJuanTransporte\\wwwroot\\images\\IMAGEN1.jpeg",
+      "PackagePath": "staticwebassets\\images\\IMAGEN1.jpeg"
+    },
+    {
+      "Id": "D:\\ACT-PROYECTO\\SanJuanTransporte\\SanJuanTransporte\\wwwroot\\images\\IMAGEN2.jpeg",
+      "PackagePath": "staticwebassets\\images\\IMAGEN2.jpeg"
+    },
+    {
+      "Id": "D:\\ACT-PROYECTO\\SanJuanTransporte\\SanJuanTransporte\\wwwroot\\images\\IMAGEN3.jpeg",
+      "PackagePath": "staticwebassets\\images\\IMAGEN3.jpeg"
+    },
+    {
+      "Id": "D:\\ACT-PROYECTO\\SanJuanTransporte\\SanJuanTransporte\\wwwroot\\images\\LOGO3.png",
+      "PackagePath": "staticwebassets\\images\\LOGO3.png"
+    },
+    {
+      "Id": "D:\\ACT-PROYECTO\\SanJuanTransporte\\SanJuanTransporte\\wwwroot\\images\\encabezado.png",
+      "PackagePath": "staticwebassets\\images\\encabezado.png"
+    },
+    {
+      "Id": "D:\\ACT-PROYECTO\\SanJuanTransporte\\SanJuanTransporte\\wwwroot\\js\\image-rotation.js",
+      "PackagePath": "staticwebassets\\js\\image-rotation.js"
     },
     {
       "Id": "D:\\ACT-PROYECTO\\SanJuanTransporte\\SanJuanTransporte\\wwwroot\\js\\site.js",
@@ -243,6 +271,10 @@
     {
       "Id": "D:\\ACT-PROYECTO\\SanJuanTransporte\\SanJuanTransporte\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "D:\\ACT-PROYECTO\\SanJuanTransporte\\SanJuanTransporte\\wwwroot\\uploads\\d3303879-a7e9-480d-85b8-60b7782164c5_LOGO.jpg",
+      "PackagePath": "staticwebassets\\uploads\\d3303879-a7e9-480d-85b8-60b7782164c5_LOGO.jpg"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.SanJuanTransporte.Microsoft.AspNetCore.StaticWebAssets.props",

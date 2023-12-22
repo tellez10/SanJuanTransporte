@@ -7,11 +7,9 @@ namespace SanJuanTransporte.Models
     public class Conductor
     {
         [Key]
-        public int Id { get; set; }
+        public int ConductorId { get; set; }
         [Required]
         public int CI { get; set; }
-        [Required]
-        public string? CodigoConstructor { get; set; }
         [Required]
         public string? Direccion { get; set; }
         [Required]
@@ -28,7 +26,7 @@ namespace SanJuanTransporte.Models
         [Display(Name="Cargar Foto")]
         public IFormFile? FotoFile { get; set; }// caragar la foto
 
-
-
+        public virtual List<Pago>? Pagos { get; set; }
+   
     }
 }

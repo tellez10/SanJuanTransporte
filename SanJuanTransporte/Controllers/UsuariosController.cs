@@ -36,7 +36,7 @@ namespace SanJuanTransporte.Controllers
             }
 
             var usuario = await _context.Usuarios
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.UsuarioId == id);
             if (usuario == null)
             {
                 return NotFound();
@@ -56,7 +56,7 @@ namespace SanJuanTransporte.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Email,Password,NombreCompleto,Foto,Rol")] Usuario usuario)
+        public async Task<IActionResult> Create([Bind("UsuarioId,Email,Password,NombreCompleto,Rol")] Usuario usuario)
         {
             if (ModelState.IsValid)
             {
@@ -88,9 +88,9 @@ namespace SanJuanTransporte.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Email,Password,NombreCompleto,Foto,Rol")] Usuario usuario)
+        public async Task<IActionResult> Edit(int id, [Bind("UsuarioId,Email,Password,NombreCompleto,Rol")] Usuario usuario)
         {
-            if (id != usuario.Id)
+            if (id != usuario.UsuarioId)
             {
                 return NotFound();
             }
@@ -104,7 +104,7 @@ namespace SanJuanTransporte.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!UsuarioExists(usuario.Id))
+                    if (!UsuarioExists(usuario.UsuarioId))
                     {
                         return NotFound();
                     }
@@ -127,7 +127,7 @@ namespace SanJuanTransporte.Controllers
             }
 
             var usuario = await _context.Usuarios
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.UsuarioId == id);
             if (usuario == null)
             {
                 return NotFound();
@@ -157,7 +157,22 @@ namespace SanJuanTransporte.Controllers
 
         private bool UsuarioExists(int id)
         {
-          return (_context.Usuarios?.Any(e => e.Id == id)).GetValueOrDefault();
+          return (_context.Usuarios?.Any(e => e.UsuarioId == id)).GetValueOrDefault();
         }
+
+        [HttpGet]
+        [Route("usuarios/search", Name = "SearchUsuarios")]
+        public async Task<IActionResult> Search(string searchTerm)
+        {
+            // Realiza la lógica de búsqueda utilizando el término de búsqueda
+            var usuarios = await _context.Usuarios
+     .Where(c => c.NombreCompleto.Contains(searchTerm))
+     .ToListAsync();
+
+
+            return View("Index", usuarios);
+        }
+
+
     }
 }

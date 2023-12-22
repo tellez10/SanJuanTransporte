@@ -13,10 +13,13 @@ namespace SanJuanTransporte.Controllers
     public class ConductorsController : Controller
     {
         private readonly MiContext _context;
+        private readonly IWebHostEnvironment _hostingEnvironment;
 
-        public ConductorsController(MiContext context)
+        public ConductorsController(MiContext context, IWebHostEnvironment hostingEnvironment)
         {
             _context = context;
+            _hostingEnvironment = hostingEnvironment;
+            _hostingEnvironment = hostingEnvironment;
         }
 
         // GET: Conductors
@@ -36,7 +39,7 @@ namespace SanJuanTransporte.Controllers
             }
 
             var conductor = await _context.Conductor
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.ConductorId == id);
             if (conductor == null)
             {
                 return NotFound();
@@ -54,18 +57,47 @@ namespace SanJuanTransporte.Controllers
         // POST: Conductors/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,CI,CodigoConstructor,Direccion,Email,NombreCompleto,NumeroLicencia,NumeroPlaca,Foto")] Conductor conductor)
+ [HttpPost]
+[ValidateAntiForgeryToken]
+public async Task<IActionResult> Create([Bind("ConductorId,CI,Direccion,Email,NombreCompleto,NumeroLicencia,NumeroPlaca,Foto,FotoFile")] Conductor conductor)
+{
+    if (ModelState.IsValid)
+    {
+        // Verificar si se ha cargado un archivo
+        if (conductor.FotoFile != null && conductor.FotoFile.Length > 0)
         {
-            if (ModelState.IsValid)
+            // Obtener la extensión del archivo
+            var fileExtension = Path.GetExtension(conductor.FotoFile.FileName).ToLowerInvariant();
+
+            // Verificar si la extensión es válida (puedes personalizar según tus requisitos)
+            if (fileExtension != ".jpg" && fileExtension != ".jpeg" && fileExtension != ".png")
             {
-                _context.Add(conductor);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                ModelState.AddModelError("FotoFile", "Solo se permiten archivos de imagen (jpg, jpeg, png).");
+                return View(conductor);
             }
-            return View(conductor);
+
+            // Obtener la ruta donde se almacenará el archivo
+            string uploadsFolder = Path.Combine(_hostingEnvironment.WebRootPath, "uploads");
+            string uniqueFileName = Guid.NewGuid().ToString() + "_" + conductor.FotoFile.FileName;
+            string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+            // Guardar el archivo en el servidor
+            using (var fileStream = new FileStream(filePath, FileMode.Create))
+            {
+                await conductor.FotoFile.CopyToAsync(fileStream);
+            }
+
+            // Actualizar la propiedad 'Foto' con el nombre único del archivo
+            conductor.Foto = uniqueFileName;
         }
+
+        _context.Add(conductor);
+        await _context.SaveChangesAsync();
+        return RedirectToAction(nameof(Index));
+    }
+    return View(conductor);
+}
+
 
         // GET: Conductors/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -88,9 +120,9 @@ namespace SanJuanTransporte.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,CI,CodigoConstructor,Direccion,Email,NombreCompleto,NumeroLicencia,NumeroPlaca,Foto")] Conductor conductor)
+        public async Task<IActionResult> Edit(int id, [Bind("ConductorId,CI,Direccion,Email,NombreCompleto,NumeroLicencia,NumeroPlaca,Foto")] Conductor conductor)
         {
-            if (id != conductor.Id)
+            if (id != conductor.ConductorId)
             {
                 return NotFound();
             }
@@ -104,7 +136,7 @@ namespace SanJuanTransporte.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ConductorExists(conductor.Id))
+                    if (!ConductorExists(conductor.ConductorId))
                     {
                         return NotFound();
                     }
@@ -127,7 +159,7 @@ namespace SanJuanTransporte.Controllers
             }
 
             var conductor = await _context.Conductor
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.ConductorId == id);
             if (conductor == null)
             {
                 return NotFound();
@@ -157,7 +189,23 @@ namespace SanJuanTransporte.Controllers
 
         private bool ConductorExists(int id)
         {
-          return (_context.Conductor?.Any(e => e.Id == id)).GetValueOrDefault();
+          return (_context.Conductor?.Any(e => e.ConductorId == id)).GetValueOrDefault();
         }
+
+        [HttpGet]
+        [Route("conductores/search", Name = "SearchConductors")]
+        public async Task<IActionResult> Search(string searchTerm)
+        {
+            // Realiza la lógica de búsqueda utilizando el término de búsqueda
+            var conductores = await _context.Conductor
+     .Where(c => c.NombreCompleto.Contains(searchTerm))
+     .ToListAsync();
+
+
+            return View("Index", conductores);
+        }
+
+
+
     }
 }

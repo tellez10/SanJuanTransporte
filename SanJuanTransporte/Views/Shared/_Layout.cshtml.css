@@ -46,3 +46,16 @@ button.accept-policy {
   white-space: nowrap;
   line-height: 60px;
 }
+
+@media print {
+    /* Estilos para la impresión */
+    body {
+        font-size: 12pt;
+    }
+
+    /* Oculta elementos que no se deben imprimir */
+    button {
+        display: none;
+    }
+}
+

@@ -2,8 +2,21 @@
     ViewData["Title"] = "Página de Inicio";
 }
 
-<div class="text-center mt-5">
-    <h1 class="display-4 text-primary">¡Bienvenido!</h1>
-    <p class="lead">Explora las maravillas de construir aplicaciones web con <a href="https://docs.microsoft.com/aspnet/core" class="text-info">ASP.NET Core</a>.</p>
-    <img src="tu-imagen.png" alt="Imagen Representativa" class="img-fluid mt-4" style="max-width: 400px;" />
-</div>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="tu-estilo.css"> <!-- Reemplaza 'tu-estilo.css' con el nombre real de tu hoja de estilo externa -->
+</head>
+<body>
+   
+
+    <div class="rotating-images-container">
+        <img src="/images/IMAGEN1.jpeg" class="rotating-image" alt="Imagen 1">
+        <img src="/images/IMAGEN2.jpeg" class="rotating-image" alt="Imagen 2">
+        <img src="/images/IMAGEN3.jpeg" class="rotating-image" alt="Imagen 3">
+    </div>
+</body>
+</html>

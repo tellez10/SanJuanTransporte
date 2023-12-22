@@ -1,0 +1,75 @@
+﻿@model SanJuanTransporte.Models.Pago
+
+@{
+    ViewData["Title"] = "Editar Pago";
+}
+
+<h1>Editar Pago</h1>
+<hr />
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Edit" method="post" class="needs-validation" novalidate>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="PagoId" />
+
+            <div class="form-group mb-3">
+                <label asp-for="Monto" class="control-label">Monto:</label>
+                <input asp-for="Monto" class="form-control" required />
+                <div class="invalid-feedback">Por favor, ingrese el monto.</div>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Detalle" class="control-label">Detalle:</label>
+                <input asp-for="Detalle" class="form-control" required />
+                <div class="invalid-feedback">Por favor, ingrese el detalle.</div>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="FechaPago" class="control-label">Fecha de Pago:</label>
+                <input asp-for="FechaPago" type="date" class="form-control" required />
+                <div class="invalid-feedback">Por favor, seleccione la fecha de pago.</div>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Numero" class="control-label"></label>
+                <input asp-for="Numero" class="form-control" />
+                <span asp-validation-for="Numero" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Mes" class="control-label"></label>
+                <select asp-for="Mes" class="form-control"></select>
+                <span asp-validation-for="Mes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Anio" class="control-label"></label>
+                <input asp-for="Anio" class="form-control" />
+                <span asp-validation-for="Anio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConductorId" class="control-label"></label>
+                <select asp-for="ConductorId" class="form-control" asp-items="ViewBag.ConductorId"></select>
+                <span asp-validation-for="ConductorId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UsuarioId" class="control-label"></label>
+                <select asp-for="UsuarioId" class="form-control" asp-items="ViewBag.UsuarioId"></select>
+                <span asp-validation-for="UsuarioId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Guardar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="mt-3">
+    <a asp-action="Index" class="btn btn-secondary">Volver a la Lista</a>
+</div>
+
+@section Scripts {
+    <script>
+        // Añade cualquier script adicional necesario para esta vista
+    </script>
+}

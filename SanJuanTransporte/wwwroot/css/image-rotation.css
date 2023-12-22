@@ -1,0 +1,19 @@
+﻿.rotating-images-container {
+    max-width: 100%;
+    height: auto;
+    overflow: hidden; /* Asegura que las imágenes no sobresalgan del contenedor */
+    transition: transform 0.5s ease-in-out; /* Cambiado a transform para la rotación */
+}
+
+.rotating-image {
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+    height: 100%;
+}
+
+/* Agregado para ocultar las imágenes excepto la primera */
+.rotating-images-container img:not(:first-child) {
+    transform: translateX(-100%);
+    opacity: 0;
+}
