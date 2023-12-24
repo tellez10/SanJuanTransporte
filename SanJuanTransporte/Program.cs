@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
 using SanJuanTransporte.Context;
+using SanJuanTransporte.Services;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +23,8 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         option.ExpireTimeSpan = TimeSpan.FromMinutes(30);
         option.AccessDeniedPath = "/Home/Privacy";
     });
+builder.Services.AddScoped<ReciboPdfService>();
+builder.Services.AddScoped<CredencialPdfService>();
 
 
 

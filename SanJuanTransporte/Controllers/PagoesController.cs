@@ -7,19 +7,23 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SanJuanTransporte.Context;
 using SanJuanTransporte.Models;
+using SanJuanTransporte.Services;
+
 
 namespace SanJuanTransporte.Controllers
 {
     public class PagoesController : Controller
     {
         private readonly MiContext _context;
-       // private readonly ReciboPdfService _reciboPdfService;
+        private readonly ReciboPdfService _reciboPdfService;
 
-        public PagoesController(MiContext context /*ReciboPdfService reciboPdfService*/)
+        public PagoesController(MiContext context , ReciboPdfService reciboPdfService)
         {
             _context = context;
-            //_reciboPdfService = reciboPdfService;
+            _reciboPdfService = reciboPdfService;
         }
+
+
 
         // GET: Pagoes
         public async Task<IActionResult> Index()
@@ -51,8 +55,8 @@ namespace SanJuanTransporte.Controllers
         // GET: Pagoes/Create
         public IActionResult Create()
         {
-            ViewData["ConductorId"] = new SelectList(_context.Conductor, "ConductorId", "Direccion");
-            ViewData["UsuarioId"] = new SelectList(_context.Usuarios, "UsuarioId", "Email");
+            ViewData["ConductorId"] = new SelectList(_context.Conductor, "ConductorId", "NombreCompleto");
+            ViewData["UsuarioId"] = new SelectList(_context.Usuarios, "UsuarioId", "NombreCompleto");
             return View();
         }
 
@@ -69,8 +73,8 @@ namespace SanJuanTransporte.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ConductorId"] = new SelectList(_context.Conductor, "ConductorId", "Direccion", pago.ConductorId);
-            ViewData["UsuarioId"] = new SelectList(_context.Usuarios, "UsuarioId", "Email", pago.UsuarioId);
+            ViewData["ConductorId"] = new SelectList(_context.Conductor, "ConductorId", "NombreCompleto", pago.ConductorId);
+            ViewData["UsuarioId"] = new SelectList(_context.Usuarios, "UsuarioId", "NombreCompleto", pago.UsuarioId);
             return View(pago);
         }
 
@@ -87,8 +91,8 @@ namespace SanJuanTransporte.Controllers
             {
                 return NotFound();
             }
-            ViewData["ConductorId"] = new SelectList(_context.Conductor, "ConductorId", "Direccion", pago.ConductorId);
-            ViewData["UsuarioId"] = new SelectList(_context.Usuarios, "UsuarioId", "Email", pago.UsuarioId);
+            ViewData["ConductorId"] = new SelectList(_context.Conductor, "ConductorId", "NombreCompleto", pago.ConductorId);
+            ViewData["UsuarioId"] = new SelectList(_context.Usuarios, "UsuarioId", "NombreCompleto", pago.UsuarioId);
             return View(pago);
         }
 
@@ -124,8 +128,8 @@ namespace SanJuanTransporte.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ConductorId"] = new SelectList(_context.Conductor, "ConductorId", "Direccion", pago.ConductorId);
-            ViewData["UsuarioId"] = new SelectList(_context.Usuarios, "UsuarioId", "Email", pago.UsuarioId);
+            ViewData["ConductorId"] = new SelectList(_context.Conductor, "ConductorId", "NombreCompleto", pago.ConductorId);
+            ViewData["UsuarioId"] = new SelectList(_context.Usuarios, "UsuarioId", "NombreCompleto", pago.UsuarioId);
             return View(pago);
         }
 
@@ -175,26 +179,28 @@ namespace SanJuanTransporte.Controllers
 
 
 
-        // Imprimir el recibo
-        // PagoesController.cs
-       
 
-            /*public async Task<IActionResult> DescargarReciboPdf(int pagoId)
+
+        public async Task<IActionResult> GenerarRecibo(int pagoId)
+        {
+            var pago = await _context.Pagos.FindAsync(pagoId);
+
+            if (pago == null)
             {
-                var pago = await _context.Pagos.FindAsync(pagoId);
+                return NotFound();
+            }
+            // Ejemplo hipotético
+            var pdfBytes = await _reciboPdfService.GenerarReciboPdfAsync(pago, "firmaConductor", "firmaEncargado");
 
-                if (pago == null)
-                {
-                    return NotFound();
-                }
-
-                var pdfBytes = await _reciboPdfService.GenerarReciboPdfAsync(pago);
-
-                return File(pdfBytes, "application/pdf", "Recibo.pdf");
-            }*/
         
 
+            // Pasa el arreglo de bytes como modelo a la vista
+            return View("Recibo", pdfBytes);
+        }
 
+
+       
+       
 
     }
 }

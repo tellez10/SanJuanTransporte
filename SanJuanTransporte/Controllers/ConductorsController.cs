@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SanJuanTransporte.Context;
 using SanJuanTransporte.Models;
+using SanJuanTransporte.Services;
 
 namespace SanJuanTransporte.Controllers
 {
@@ -14,12 +15,13 @@ namespace SanJuanTransporte.Controllers
     {
         private readonly MiContext _context;
         private readonly IWebHostEnvironment _hostingEnvironment;
+        private readonly CredencialPdfService _credencialPdfService;
 
-        public ConductorsController(MiContext context, IWebHostEnvironment hostingEnvironment)
+        public ConductorsController(MiContext context, IWebHostEnvironment hostingEnvironment,CredencialPdfService credencialPdfService)
         {
             _context = context;
             _hostingEnvironment = hostingEnvironment;
-            _hostingEnvironment = hostingEnvironment;
+            _credencialPdfService = credencialPdfService ?? throw new ArgumentNullException(nameof(credencialPdfService));
         }
 
         // GET: Conductors
@@ -196,7 +198,7 @@ public async Task<IActionResult> Create([Bind("ConductorId,CI,Direccion,Email,No
         [Route("conductores/search", Name = "SearchConductors")]
         public async Task<IActionResult> Search(string searchTerm)
         {
-            // Realiza la lógica de búsqueda utilizando el término de búsqueda
+            // Es para buscar 
             var conductores = await _context.Conductor
      .Where(c => c.NombreCompleto.Contains(searchTerm))
      .ToListAsync();
@@ -204,7 +206,21 @@ public async Task<IActionResult> Create([Bind("ConductorId,CI,Direccion,Email,No
 
             return View("Index", conductores);
         }
+        public async Task<IActionResult> GenerarCredencial(int conductorId)
+        {
+            var conductor = await _context.Conductor.FindAsync(conductorId);
 
+            if (conductor == null)
+            {
+                return NotFound();
+            }
+
+            var pdfBytes = await _credencialPdfService.GenerarCredencialPdfAsync(conductor);
+
+
+            // Pasa el arreglo de bytes como modelo a la vista
+            return View("Credencial", pdfBytes);
+        }
 
 
     }

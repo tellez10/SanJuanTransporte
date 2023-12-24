@@ -1,0 +1,7 @@
+﻿body {
+    background-image: url('/images/IMAGEN6.jpg'); /* Cambia la ruta según la ubicación de tu imagen */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Esto fija la imagen de fondo para que no se desplace con el contenido */
+    /* Puedes agregar más propiedades según tus preferencias */
+}

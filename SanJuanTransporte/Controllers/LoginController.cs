@@ -7,7 +7,7 @@ using SanJuanTransporte.Models;
 using System.Security.Claims;
 using System.Security.Policy;
 
-namespace SindicatoWeb.Controllers
+namespace SanJuanTransporte.Controllers
 {
     public class LoginController : Controller
     {

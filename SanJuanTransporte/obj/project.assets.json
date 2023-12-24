@@ -46,6 +46,80 @@
           }
         }
       },
+      "BouncyCastle.NetCore/1.8.5": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/BouncyCastle.Crypto.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/BouncyCastle.Crypto.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Common.Logging/3.4.1": {
+        "type": "package",
+        "dependencies": {
+          "Common.Logging.Core": "3.4.1",
+          "Microsoft.CSharp": "4.0.1",
+          "System.Collections": "4.0.11",
+          "System.Diagnostics.Debug": "4.0.11",
+          "System.Globalization": "4.0.11",
+          "System.Reflection.TypeExtensions": "4.1.0",
+          "System.Runtime.Extensions": "4.1.0",
+          "System.Threading": "4.0.11"
+        },
+        "compile": {
+          "lib/netstandard1.3/Common.Logging.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard1.3/Common.Logging.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Common.Logging.Core/3.4.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.0.1"
+        },
+        "compile": {
+          "lib/netstandard1.0/Common.Logging.Core.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard1.0/Common.Logging.Core.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Consist.BouncyCastle.Encryption/1.0.3": {
+        "type": "package",
+        "dependencies": {
+          "BouncyCastle.NetCore": "1.8.5",
+          "Consist.Encryption.Abstraction": "1.0.8"
+        },
+        "compile": {
+          "lib/netstandard2.0/Consist.BouncyCastle.Encryption.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Consist.BouncyCastle.Encryption.dll": {}
+        }
+      },
+      "Consist.Encryption.Abstraction/1.0.8": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Consist.Encryption.Abstraction.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Consist.Encryption.Abstraction.dll": {}
+        }
+      },
       "Humanizer/2.14.1": {
         "type": "package",
         "dependencies": {
@@ -640,12 +714,12 @@
           }
         }
       },
-      "itext/8.0.2": {
+      "itext7/7.1.16": {
         "type": "package",
         "dependencies": {
-          "Microsoft.DotNet.PlatformAbstractions": "1.1.0",
+          "Common.Logging": "3.4.1",
           "Microsoft.Extensions.DependencyModel": "1.1.0",
-          "Microsoft.Extensions.Logging": "5.0.0",
+          "Portable.BouncyCastle": "1.8.9",
           "System.Collections.NonGeneric": "4.3.0",
           "System.Diagnostics.Process": "4.3.0",
           "System.Globalization.Extensions": "4.3.0",
@@ -653,17 +727,12 @@
           "System.Runtime.Serialization.Formatters": "4.3.0",
           "System.Security.Cryptography.Csp": "4.3.0",
           "System.Text.Encoding.CodePages": "4.3.0",
-          "System.Text.RegularExpressions": "4.3.1",
           "System.Threading.Thread": "4.3.0",
           "System.Threading.ThreadPool": "4.3.0",
-          "System.Xml.XmlDocument": "4.3.0",
-          "itext.commons": "8.0.2"
+          "System.Xml.XmlDocument": "4.3.0"
         },
         "compile": {
           "lib/netstandard2.0/itext.barcodes.dll": {
-            "related": ".xml"
-          },
-          "lib/netstandard2.0/itext.bouncy-castle-connector.dll": {
             "related": ".xml"
           },
           "lib/netstandard2.0/itext.forms.dll": {
@@ -695,9 +764,6 @@
           "lib/netstandard2.0/itext.barcodes.dll": {
             "related": ".xml"
           },
-          "lib/netstandard2.0/itext.bouncy-castle-connector.dll": {
-            "related": ".xml"
-          },
           "lib/netstandard2.0/itext.forms.dll": {
             "related": ".xml"
           },
@@ -722,29 +788,6 @@
           "lib/netstandard2.0/itext.svg.dll": {
             "related": ".xml"
           }
-        }
-      },
-      "itext.commons/8.0.2": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Logging": "5.0.0",
-          "Newtonsoft.Json": "13.0.1"
-        },
-        "compile": {
-          "lib/netstandard2.0/itext.commons.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/itext.commons.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "itext7/8.0.2": {
-        "type": "package",
-        "dependencies": {
-          "itext": "8.0.2"
         }
       },
       "MessagePack/2.1.152": {
@@ -1454,23 +1497,17 @@
           }
         }
       },
-      "Microsoft.DotNet.PlatformAbstractions/1.1.0": {
+      "Microsoft.DotNet.PlatformAbstractions/3.1.6": {
         "type": "package",
-        "dependencies": {
-          "System.AppContext": "4.1.0",
-          "System.Collections": "4.0.11",
-          "System.IO": "4.1.0",
-          "System.IO.FileSystem": "4.0.1",
-          "System.Reflection.TypeExtensions": "4.1.0",
-          "System.Runtime.Extensions": "4.1.0",
-          "System.Runtime.InteropServices": "4.1.0",
-          "System.Runtime.InteropServices.RuntimeInformation": "4.0.0"
-        },
         "compile": {
-          "lib/netstandard1.3/Microsoft.DotNet.PlatformAbstractions.dll": {}
+          "lib/netstandard2.0/Microsoft.DotNet.PlatformAbstractions.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard1.3/Microsoft.DotNet.PlatformAbstractions.dll": {}
+          "lib/netstandard2.0/Microsoft.DotNet.PlatformAbstractions.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.DotNet.Scaffolding.Shared/6.0.16": {
@@ -2012,7 +2049,7 @@
           }
         }
       },
-      "Microsoft.NETCore.Platforms/1.1.1": {
+      "Microsoft.NETCore.Platforms/1.1.0": {
         "type": "package",
         "compile": {
           "lib/netstandard1.0/_._": {}
@@ -2021,7 +2058,7 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Microsoft.NETCore.Targets/1.1.3": {
+      "Microsoft.NETCore.Targets/1.1.0": {
         "type": "package",
         "compile": {
           "lib/netstandard1.0/_._": {}
@@ -2426,6 +2463,19 @@
         },
         "runtime": {
           "lib/netstandard2.0/NuGet.Versioning.dll": {}
+        }
+      },
+      "Portable.BouncyCastle/1.8.9": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/BouncyCastle.Crypto.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/BouncyCastle.Crypto.dll": {
+            "related": ".xml"
+          }
         }
       },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
@@ -3643,11 +3693,11 @@
           }
         }
       },
-      "System.Runtime/4.3.1": {
+      "System.Runtime/4.3.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.NETCore.Platforms": "1.1.1",
-          "Microsoft.NETCore.Targets": "1.1.3"
+          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.NETCore.Targets": "1.1.0"
         },
         "compile": {
           "ref/netstandard1.5/System.Runtime.dll": {
@@ -4246,10 +4296,10 @@
           "buildTransitive/net6.0/System.Text.Json.targets": {}
         }
       },
-      "System.Text.RegularExpressions/4.3.1": {
+      "System.Text.RegularExpressions/4.3.0": {
         "type": "package",
         "dependencies": {
-          "System.Runtime": "4.3.1"
+          "System.Runtime": "4.3.0"
         },
         "compile": {
           "ref/netcoreapp1.1/System.Text.RegularExpressions.dll": {}
@@ -4490,6 +4540,95 @@
         "azureicon.png",
         "lib/netstandard2.0/Azure.Identity.dll",
         "lib/netstandard2.0/Azure.Identity.xml"
+      ]
+    },
+    "BouncyCastle.NetCore/1.8.5": {
+      "sha512": "6uxsQw2UXrt82VQAWC2td3oBSJjUZ3P4u4DliagB8wf67KsU53V8sW9xwdF+IwZOOZFR0TCZuv/YKZ2BlrfAag==",
+      "type": "package",
+      "path": "bouncycastle.netcore/1.8.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "bouncycastle.netcore.1.8.5.nupkg.sha512",
+        "bouncycastle.netcore.nuspec",
+        "lib/Mono/BouncyCastle.Crypto.dll",
+        "lib/Mono/BouncyCastle.Crypto.xml",
+        "lib/MonoAndroid/BouncyCastle.Crypto.dll",
+        "lib/MonoAndroid/BouncyCastle.Crypto.xml",
+        "lib/MonoMac/BouncyCastle.Crypto.dll",
+        "lib/MonoMac/BouncyCastle.Crypto.xml",
+        "lib/MonoTouch/BouncyCastle.Crypto.dll",
+        "lib/MonoTouch/BouncyCastle.Crypto.xml",
+        "lib/net20/BouncyCastle.Crypto.dll",
+        "lib/net20/BouncyCastle.Crypto.xml",
+        "lib/netstandard2.0/BouncyCastle.Crypto.dll",
+        "lib/netstandard2.0/BouncyCastle.Crypto.xml",
+        "lib/xamarinios/BouncyCastle.Crypto.dll",
+        "lib/xamarinios/BouncyCastle.Crypto.xml"
+      ]
+    },
+    "Common.Logging/3.4.1": {
+      "sha512": "5eZ/vgEOqzLg4PypZqnJ+wMhhgHyckicbZY4iDxqQ4FtOz0CpdYZ0xQ78aszMzeAJZiLLb5VdR9tPfunVQLz6g==",
+      "type": "package",
+      "path": "common.logging/3.4.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "common.logging.3.4.1.nupkg.sha512",
+        "common.logging.nuspec",
+        "lib/net35/Common.Logging.dll",
+        "lib/net35/Common.Logging.pdb",
+        "lib/net35/Common.Logging.xml",
+        "lib/net40/Common.Logging.dll",
+        "lib/net40/Common.Logging.pdb",
+        "lib/net40/Common.Logging.xml",
+        "lib/netstandard1.3/Common.Logging.dll",
+        "lib/netstandard1.3/Common.Logging.pdb",
+        "lib/netstandard1.3/Common.Logging.xml"
+      ]
+    },
+    "Common.Logging.Core/3.4.1": {
+      "sha512": "wLHldZHvxsSD6Ahonfj00/SkfHfKqO+YT6jsUwVm8Rch1REL9IArHAcSLXxYxYfu5/4ydGtmXvOtaH3AkVPu0A==",
+      "type": "package",
+      "path": "common.logging.core/3.4.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "common.logging.core.3.4.1.nupkg.sha512",
+        "common.logging.core.nuspec",
+        "lib/net40/Common.Logging.Core.XML",
+        "lib/net40/Common.Logging.Core.dll",
+        "lib/net40/Common.Logging.Core.pdb",
+        "lib/netstandard1.0/Common.Logging.Core.dll",
+        "lib/netstandard1.0/Common.Logging.Core.pdb",
+        "lib/netstandard1.0/Common.Logging.Core.xml",
+        "lib/portable-win+net40+sl40+wp7+wpa81/Common.Logging.Core.XML",
+        "lib/portable-win+net40+sl40+wp7+wpa81/Common.Logging.Core.dll",
+        "lib/portable-win+net40+sl40+wp7+wpa81/Common.Logging.Core.pdb"
+      ]
+    },
+    "Consist.BouncyCastle.Encryption/1.0.3": {
+      "sha512": "FuYv94BVmXo9F3pD3RKD0sYbDUmMAmFBUnlHRH0NkwP3RloQ5P3Xaa/5qWN9t95rgzFOIEyAI5NRfsGDYjYXeQ==",
+      "type": "package",
+      "path": "consist.bouncycastle.encryption/1.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "consist.bouncycastle.encryption.1.0.3.nupkg.sha512",
+        "consist.bouncycastle.encryption.nuspec",
+        "lib/netstandard2.0/Consist.BouncyCastle.Encryption.dll"
+      ]
+    },
+    "Consist.Encryption.Abstraction/1.0.8": {
+      "sha512": "CdVL0DjHS/mm7AJ1s9fwrix35vQlI8ElSKvNclVO7Mgf/5YKbO46tUmUlEjFlCZgY5oluah7l35g6FOGsnggUw==",
+      "type": "package",
+      "path": "consist.encryption.abstraction/1.0.8",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "consist.encryption.abstraction.1.0.8.nupkg.sha512",
+        "consist.encryption.abstraction.nuspec",
+        "lib/netstandard2.0/Consist.Encryption.Abstraction.dll"
       ]
     },
     "Humanizer/2.14.1": {
@@ -5238,42 +5377,38 @@
         "logo.png"
       ]
     },
-    "itext/8.0.2": {
-      "sha512": "79IRTeZZirzRDEtB1PtUMSpsxaJiFz5rAXY4/VtSipsi0qlQpJ/88jxd2SsfX0IggH+wlrsiAc0Y8X2et2T+Bg==",
+    "itext7/7.1.16": {
+      "sha512": "NDZ2HOMHu2T4g2Y+bwDMGydu7nyNZsxS5mtnzU/fwrafejFvnt8JE40fZtnuoX4qGo1rxW0uZvwB5iwFf+JOJA==",
       "type": "package",
-      "path": "itext/8.0.2",
+      "path": "itext7/7.1.16",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "ITSC-avatar.png",
         "LICENSE.md",
         "gnu-agpl-v3.0.md",
-        "itext.8.0.2.nupkg.sha512",
-        "itext.nuspec",
-        "lib/net461/itext.barcodes.dll",
-        "lib/net461/itext.barcodes.xml",
-        "lib/net461/itext.bouncy-castle-connector.dll",
-        "lib/net461/itext.bouncy-castle-connector.xml",
-        "lib/net461/itext.forms.dll",
-        "lib/net461/itext.forms.xml",
-        "lib/net461/itext.io.dll",
-        "lib/net461/itext.io.xml",
-        "lib/net461/itext.kernel.dll",
-        "lib/net461/itext.kernel.xml",
-        "lib/net461/itext.layout.dll",
-        "lib/net461/itext.layout.xml",
-        "lib/net461/itext.pdfa.dll",
-        "lib/net461/itext.pdfa.xml",
-        "lib/net461/itext.sign.dll",
-        "lib/net461/itext.sign.xml",
-        "lib/net461/itext.styledxmlparser.dll",
-        "lib/net461/itext.styledxmlparser.xml",
-        "lib/net461/itext.svg.dll",
-        "lib/net461/itext.svg.xml",
+        "itext7.7.1.16.nupkg.sha512",
+        "itext7.nuspec",
+        "lib/net45/itext.barcodes.dll",
+        "lib/net45/itext.barcodes.xml",
+        "lib/net45/itext.forms.dll",
+        "lib/net45/itext.forms.xml",
+        "lib/net45/itext.io.dll",
+        "lib/net45/itext.io.xml",
+        "lib/net45/itext.kernel.dll",
+        "lib/net45/itext.kernel.xml",
+        "lib/net45/itext.layout.dll",
+        "lib/net45/itext.layout.xml",
+        "lib/net45/itext.pdfa.dll",
+        "lib/net45/itext.pdfa.xml",
+        "lib/net45/itext.sign.dll",
+        "lib/net45/itext.sign.xml",
+        "lib/net45/itext.styledxmlparser.dll",
+        "lib/net45/itext.styledxmlparser.xml",
+        "lib/net45/itext.svg.dll",
+        "lib/net45/itext.svg.xml",
         "lib/netstandard2.0/itext.barcodes.dll",
         "lib/netstandard2.0/itext.barcodes.xml",
-        "lib/netstandard2.0/itext.bouncy-castle-connector.dll",
-        "lib/netstandard2.0/itext.bouncy-castle-connector.xml",
         "lib/netstandard2.0/itext.forms.dll",
         "lib/netstandard2.0/itext.forms.xml",
         "lib/netstandard2.0/itext.io.dll",
@@ -5290,36 +5425,6 @@
         "lib/netstandard2.0/itext.styledxmlparser.xml",
         "lib/netstandard2.0/itext.svg.dll",
         "lib/netstandard2.0/itext.svg.xml"
-      ]
-    },
-    "itext.commons/8.0.2": {
-      "sha512": "/F7j7XERA84XgIXDb4j/so1GagAToraVKZIRAdk/ibkvYoU1uwuILU2Ly28sSFf12NN7WIBQHKSk7njJl7Nk8g==",
-      "type": "package",
-      "path": "itext.commons/8.0.2",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "ITSC-avatar.png",
-        "itext.commons.8.0.2.nupkg.sha512",
-        "itext.commons.nuspec",
-        "lib/net461/itext.commons.dll",
-        "lib/net461/itext.commons.xml",
-        "lib/netstandard2.0/itext.commons.dll",
-        "lib/netstandard2.0/itext.commons.xml"
-      ]
-    },
-    "itext7/8.0.2": {
-      "sha512": "IuFfSlMSTLqVGCIsxpcDL9kCtEfppSBjq4V+RgfrxnqEC+iNF4tCHiIdl8quyzTDbaHF4vNufxe2NXMJMkPlSw==",
-      "type": "package",
-      "path": "itext7/8.0.2",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "ITSC-avatar.png",
-        "LICENSE.md",
-        "gnu-agpl-v3.0.md",
-        "itext7.8.0.2.nupkg.sha512",
-        "itext7.nuspec"
       ]
     },
     "MessagePack/2.1.152": {
@@ -6142,16 +6247,23 @@
         "microsoft.diasymreader.nuspec"
       ]
     },
-    "Microsoft.DotNet.PlatformAbstractions/1.1.0": {
-      "sha512": "Bl6KYfbFSIW3QIRHAp931iR5h01qHjKghdpAtncwbzNUs0+IUZ+XfwkIU0sQsR33ufGvi3u4dZMIYYFysjpHAA==",
+    "Microsoft.DotNet.PlatformAbstractions/3.1.6": {
+      "sha512": "jek4XYaQ/PGUwDKKhwR8K47Uh1189PFzMeLqO83mXrXQVIpARZCcfuDedH50YDTepBkfijCZN5U/vZi++erxtg==",
       "type": "package",
-      "path": "microsoft.dotnet.platformabstractions/1.1.0",
+      "path": "microsoft.dotnet.platformabstractions/3.1.6",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "lib/net451/Microsoft.DotNet.PlatformAbstractions.dll",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net45/Microsoft.DotNet.PlatformAbstractions.dll",
+        "lib/net45/Microsoft.DotNet.PlatformAbstractions.xml",
         "lib/netstandard1.3/Microsoft.DotNet.PlatformAbstractions.dll",
-        "microsoft.dotnet.platformabstractions.1.1.0.nupkg.sha512",
+        "lib/netstandard1.3/Microsoft.DotNet.PlatformAbstractions.xml",
+        "lib/netstandard2.0/Microsoft.DotNet.PlatformAbstractions.dll",
+        "lib/netstandard2.0/Microsoft.DotNet.PlatformAbstractions.xml",
+        "microsoft.dotnet.platformabstractions.3.1.6.nupkg.sha512",
         "microsoft.dotnet.platformabstractions.nuspec"
       ]
     },
@@ -6873,32 +6985,32 @@
         "ref/netstandard2.0/Microsoft.NET.StringTools.xml"
       ]
     },
-    "Microsoft.NETCore.Platforms/1.1.1": {
-      "sha512": "TMBuzAHpTenGbGgk0SMTwyEkyijY/Eae4ZGsFNYJvAr/LDn1ku3Etp3FPxChmDp5HHF3kzJuoaa08N0xjqAJfQ==",
+    "Microsoft.NETCore.Platforms/1.1.0": {
+      "sha512": "kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
       "type": "package",
-      "path": "microsoft.netcore.platforms/1.1.1",
+      "path": "microsoft.netcore.platforms/1.1.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/_._",
-        "microsoft.netcore.platforms.1.1.1.nupkg.sha512",
+        "microsoft.netcore.platforms.1.1.0.nupkg.sha512",
         "microsoft.netcore.platforms.nuspec",
         "runtime.json"
       ]
     },
-    "Microsoft.NETCore.Targets/1.1.3": {
-      "sha512": "3Wrmi0kJDzClwAC+iBdUBpEKmEle8FQNsCs77fkiOIw/9oYA07bL1EZNX0kQ2OMN3xpwvl0vAtOCYY3ndDNlhQ==",
+    "Microsoft.NETCore.Targets/1.1.0": {
+      "sha512": "aOZA3BWfz9RXjpzt0sRJJMjAscAUm3Hoa4UWAfceV9UTYxgwZ1lZt5nO2myFf+/jetYQo4uTP7zS8sJY67BBxg==",
       "type": "package",
-      "path": "microsoft.netcore.targets/1.1.3",
+      "path": "microsoft.netcore.targets/1.1.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/_._",
-        "microsoft.netcore.targets.1.1.3.nupkg.sha512",
+        "microsoft.netcore.targets.1.1.0.nupkg.sha512",
         "microsoft.netcore.targets.nuspec",
         "runtime.json"
       ]
@@ -7798,6 +7910,21 @@
         "lib/netstandard2.0/NuGet.Versioning.dll",
         "nuget.versioning.6.6.1.nupkg.sha512",
         "nuget.versioning.nuspec"
+      ]
+    },
+    "Portable.BouncyCastle/1.8.9": {
+      "sha512": "wlJo8aFoeyl+W93iFXTK5ShzDYk5WBqoUPjTNEM0Xv9kn1H+4hmuCjF0/n8HLm9Nnp1aY6KNndWqQTNk+NGgRQ==",
+      "type": "package",
+      "path": "portable.bouncycastle/1.8.9",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/BouncyCastle.Crypto.dll",
+        "lib/net40/BouncyCastle.Crypto.xml",
+        "lib/netstandard2.0/BouncyCastle.Crypto.dll",
+        "lib/netstandard2.0/BouncyCastle.Crypto.xml",
+        "portable.bouncycastle.1.8.9.nupkg.sha512",
+        "portable.bouncycastle.nuspec"
       ]
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
@@ -10406,10 +10533,10 @@
         "system.resources.resourcemanager.nuspec"
       ]
     },
-    "System.Runtime/4.3.1": {
-      "sha512": "abhfv1dTK6NXOmu4bgHIONxHyEqFjW8HwXPmpY9gmll+ix9UNo4XDcmzJn6oLooftxNssVHdJC1pGT9jkSynQg==",
+    "System.Runtime/4.3.0": {
+      "sha512": "JufQi0vPQ0xGnAczR13AUFglDyVYt4Kqnz1AZaiKZ5+GICq0/1MH/mO/eAJHt/mHW1zjKBJd7kV26SrxddAhiw==",
       "type": "package",
-      "path": "system.runtime/4.3.1",
+      "path": "system.runtime/4.3.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -10494,7 +10621,7 @@
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._",
-        "system.runtime.4.3.1.nupkg.sha512",
+        "system.runtime.4.3.0.nupkg.sha512",
         "system.runtime.nuspec"
       ]
     },
@@ -11769,10 +11896,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.Text.RegularExpressions/4.3.1": {
-      "sha512": "N0kNRrWe4+nXOWlpLT4LAY5brb8caNFlUuIRpraCVMDLYutKkol1aV079rQjLuSxKMJT2SpBQsYX9xbcTMmzwg==",
+    "System.Text.RegularExpressions/4.3.0": {
+      "sha512": "RpT2DA+L660cBt1FssIE9CAGpLFdFPuheB7pLpKpn6ZXNby7jDERe8Ua/Ne2xGiwLVG2JOqziiaVCGDon5sKFA==",
       "type": "package",
-      "path": "system.text.regularexpressions/4.3.1",
+      "path": "system.text.regularexpressions/4.3.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -11849,7 +11976,7 @@
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._",
-        "system.text.regularexpressions.4.3.1.nupkg.sha512",
+        "system.text.regularexpressions.4.3.0.nupkg.sha512",
         "system.text.regularexpressions.nuspec"
       ]
     },
@@ -12396,14 +12523,16 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "Consist.BouncyCastle.Encryption >= 1.0.3",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.9",
+      "Microsoft.DotNet.PlatformAbstractions >= 3.1.6",
       "Microsoft.EntityFrameworkCore >= 7.0.13",
       "Microsoft.EntityFrameworkCore.Design >= 7.0.13",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.7",
       "Microsoft.EntityFrameworkCore.Sqlite >= 7.0.1",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.13",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.16",
-      "itext7 >= 8.0.2"
+      "itext7 >= 7.1.16"
     ]
   },
   "packageFolders": {
@@ -12451,9 +12580,17 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "Consist.BouncyCastle.Encryption": {
+            "target": "Package",
+            "version": "[1.0.3, )"
+          },
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
             "target": "Package",
             "version": "[6.0.9, )"
+          },
+          "Microsoft.DotNet.PlatformAbstractions": {
+            "target": "Package",
+            "version": "[3.1.6, )"
           },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
@@ -12485,7 +12622,7 @@
           },
           "itext7": {
             "target": "Package",
-            "version": "[8.0.2, )"
+            "version": "[7.1.16, )"
           }
         },
         "imports": [

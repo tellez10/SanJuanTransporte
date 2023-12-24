@@ -4,7 +4,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Lista de Pagos</h1>
+<h1>LISTA DE PAGOS</h1>
 
 <p>
     <a class="btn btn-primary" asp-action="Create">Crear Nuevo</a>
@@ -13,30 +13,31 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Monto)
+                MONTO BS.
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Detalle)
+                DETALLE
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.FechaPago)
+                FECHA DE PAGO
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Numero)
+                NUMERO
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Mes)
+                MES
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Anio)
+                AÑO
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Conductor)
+                CONDUCTOR
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Usuario)
+                USUARIO
             </th>
-            <th></th>
+           
+            <th>OPCIONES</th>
         </tr>
     </thead>
     <tbody>
@@ -62,14 +63,14 @@
                     @Html.DisplayFor(modelItem => item.Anio)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Conductor.Direccion)
+                    @Html.DisplayFor(modelItem => item.Conductor.NombreCompleto)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Usuario.Email)
+                    @Html.DisplayFor(modelItem => item.Usuario.NombreCompleto)
                 </td>
                 <td>
-                    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.PagoId">Editar</a> |
-                    <a class="btn btn-info" asp-action="Details" asp-route-id="@item.PagoId">Detalles</a> |
+                    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.PagoId">Editar</a> 
+                    <a class="btn btn-info" asp-action="Details" asp-route-id="@item.PagoId">Detalles</a> 
                     <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.PagoId">Eliminar</a>
                 </td>
             </tr>

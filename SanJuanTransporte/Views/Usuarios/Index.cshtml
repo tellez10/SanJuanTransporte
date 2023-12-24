@@ -4,11 +4,11 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Usuarios</h1>
+<h1>USUARIOS</h1>
 
 <form asp-action="Search" asp-controller="Usuarios" method="get">
     <div class="input-group mb-3">
-        <input type="text" class="form-control" name="searchTerm" placeholder="Buscar usuarios">
+        <input type="text" class="form-control" name="searchTerm" placeholder="BUSCAR USUARIOS">
         <div class="input-group-append">
             <button class="btn btn-primary" type="submit">Buscar</button>
         </div>
@@ -23,18 +23,18 @@
     <thead class="thead-dark">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Email)
+                CORREO ELECTRONICO
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Password)
+                CONTRASEÑA
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.NombreCompleto)
+                NOMBRE COMPLETO
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Rol)
+                ROL
             </th>
-            <th>Acciones</th>
+            <th>OPCIONES</th>
         </tr>
     </thead>
     <tbody>

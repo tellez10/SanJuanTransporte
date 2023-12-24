@@ -1,0 +1,52 @@
+﻿@model byte[]
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <title>Credencial</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .credencial-container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        .credencial-item {
+            margin-bottom: 10px;
+        }
+
+        .credencial-image {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Recibo</h1>
+    @if (Model != null && Model.Length > 0)
+    {
+        <embed src="data:application/pdf;base64,@(Convert.ToBase64String(Model))" width="100%" height="600px" />
+        <p>El recibo se ha generado correctamente. </p>
+       
+    }
+    else
+    {
+        <p>Hubo un error al generar el recibo.</p>
+    }
+</body>
+</html>

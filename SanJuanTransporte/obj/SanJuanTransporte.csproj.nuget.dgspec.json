@@ -45,9 +45,17 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Consist.BouncyCastle.Encryption": {
+              "target": "Package",
+              "version": "[1.0.3, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.9, )"
+            },
+            "Microsoft.DotNet.PlatformAbstractions": {
+              "target": "Package",
+              "version": "[3.1.6, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -79,7 +87,7 @@
             },
             "itext7": {
               "target": "Package",
-              "version": "[8.0.2, )"
+              "version": "[7.1.16, )"
             }
           },
           "imports": [

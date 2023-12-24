@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\SanJuanTransporte.bundle.scp.css"
     },
     {
+      "Id": "D:\\ACT-PROYECTO\\SanJuanTransporte\\SanJuanTransporte\\wwwroot\\css\\SanJuanTransporte.styles.css",
+      "PackagePath": "staticwebassets\\css\\SanJuanTransporte.styles.css"
+    },
+    {
       "Id": "D:\\ACT-PROYECTO\\SanJuanTransporte\\SanJuanTransporte\\wwwroot\\css\\image-rotation.css",
       "PackagePath": "staticwebassets\\css\\image-rotation.css"
     },
@@ -17,6 +21,14 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\ACT-PROYECTO\\SanJuanTransporte\\SanJuanTransporte\\wwwroot\\images\\ENCABEZADO.png",
+      "PackagePath": "staticwebassets\\images\\ENCABEZADO.png"
+    },
+    {
+      "Id": "D:\\ACT-PROYECTO\\SanJuanTransporte\\SanJuanTransporte\\wwwroot\\images\\IMAGEN 11.jpg",
+      "PackagePath": "staticwebassets\\images\\IMAGEN 11.jpg"
+    },
+    {
       "Id": "D:\\ACT-PROYECTO\\SanJuanTransporte\\SanJuanTransporte\\wwwroot\\images\\IMAGEN1.jpeg",
       "PackagePath": "staticwebassets\\images\\IMAGEN1.jpeg"
     },
@@ -25,16 +37,24 @@
       "PackagePath": "staticwebassets\\images\\IMAGEN2.jpeg"
     },
     {
-      "Id": "D:\\ACT-PROYECTO\\SanJuanTransporte\\SanJuanTransporte\\wwwroot\\images\\IMAGEN3.jpeg",
-      "PackagePath": "staticwebassets\\images\\IMAGEN3.jpeg"
+      "Id": "D:\\ACT-PROYECTO\\SanJuanTransporte\\SanJuanTransporte\\wwwroot\\images\\IMAGEN4.jpg",
+      "PackagePath": "staticwebassets\\images\\IMAGEN4.jpg"
+    },
+    {
+      "Id": "D:\\ACT-PROYECTO\\SanJuanTransporte\\SanJuanTransporte\\wwwroot\\images\\IMAGEN5.jpg",
+      "PackagePath": "staticwebassets\\images\\IMAGEN5.jpg"
+    },
+    {
+      "Id": "D:\\ACT-PROYECTO\\SanJuanTransporte\\SanJuanTransporte\\wwwroot\\images\\IMAGEN6.jpg",
+      "PackagePath": "staticwebassets\\images\\IMAGEN6.jpg"
+    },
+    {
+      "Id": "D:\\ACT-PROYECTO\\SanJuanTransporte\\SanJuanTransporte\\wwwroot\\images\\IMAGEN7.jpg",
+      "PackagePath": "staticwebassets\\images\\IMAGEN7.jpg"
     },
     {
       "Id": "D:\\ACT-PROYECTO\\SanJuanTransporte\\SanJuanTransporte\\wwwroot\\images\\LOGO3.png",
       "PackagePath": "staticwebassets\\images\\LOGO3.png"
-    },
-    {
-      "Id": "D:\\ACT-PROYECTO\\SanJuanTransporte\\SanJuanTransporte\\wwwroot\\images\\encabezado.png",
-      "PackagePath": "staticwebassets\\images\\encabezado.png"
     },
     {
       "Id": "D:\\ACT-PROYECTO\\SanJuanTransporte\\SanJuanTransporte\\wwwroot\\js\\image-rotation.js",
@@ -273,8 +293,32 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "D:\\ACT-PROYECTO\\SanJuanTransporte\\SanJuanTransporte\\wwwroot\\uploads\\2988be23-f17b-4e02-a6c1-a3f75a07517f_4.jpeg",
+      "PackagePath": "staticwebassets\\uploads\\2988be23-f17b-4e02-a6c1-a3f75a07517f_4.jpeg"
+    },
+    {
+      "Id": "D:\\ACT-PROYECTO\\SanJuanTransporte\\SanJuanTransporte\\wwwroot\\uploads\\5260bb56-b2a5-4127-8452-a433e5089eea_th (1).jpeg",
+      "PackagePath": "staticwebassets\\uploads\\5260bb56-b2a5-4127-8452-a433e5089eea_th (1).jpeg"
+    },
+    {
+      "Id": "D:\\ACT-PROYECTO\\SanJuanTransporte\\SanJuanTransporte\\wwwroot\\uploads\\581306d8-e0ce-4951-bcb7-20bb77538a8e_BackgroundEraser_20230726_193001604.jpg",
+      "PackagePath": "staticwebassets\\uploads\\581306d8-e0ce-4951-bcb7-20bb77538a8e_BackgroundEraser_20230726_193001604.jpg"
+    },
+    {
+      "Id": "D:\\ACT-PROYECTO\\SanJuanTransporte\\SanJuanTransporte\\wwwroot\\uploads\\9ca1e327-1255-47b3-939f-b9b0686867a7_th (2).jpeg",
+      "PackagePath": "staticwebassets\\uploads\\9ca1e327-1255-47b3-939f-b9b0686867a7_th (2).jpeg"
+    },
+    {
+      "Id": "D:\\ACT-PROYECTO\\SanJuanTransporte\\SanJuanTransporte\\wwwroot\\uploads\\aa513ad3-5be1-42df-a85b-94a203c93264_OIP.jpeg",
+      "PackagePath": "staticwebassets\\uploads\\aa513ad3-5be1-42df-a85b-94a203c93264_OIP.jpeg"
+    },
+    {
       "Id": "D:\\ACT-PROYECTO\\SanJuanTransporte\\SanJuanTransporte\\wwwroot\\uploads\\d3303879-a7e9-480d-85b8-60b7782164c5_LOGO.jpg",
       "PackagePath": "staticwebassets\\uploads\\d3303879-a7e9-480d-85b8-60b7782164c5_LOGO.jpg"
+    },
+    {
+      "Id": "D:\\ACT-PROYECTO\\SanJuanTransporte\\SanJuanTransporte\\wwwroot\\uploads\\da682311-9f9f-4580-9df9-6a1f383b9527_OIP (1).jpeg",
+      "PackagePath": "staticwebassets\\uploads\\da682311-9f9f-4580-9df9-6a1f383b9527_OIP (1).jpeg"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.SanJuanTransporte.Microsoft.AspNetCore.StaticWebAssets.props",
