@@ -1,0 +1,79 @@
+﻿@model IEnumerable<SanJuanTransporte.Models.Pago>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>LISTA DE PAGOS</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Crear Nuevo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                MONTO BS.
+            </th>
+            <th>
+                DETALLE
+            </th>
+            <th>
+                FECHA DE PAGO
+            </th>
+            <th>
+                NUMERO
+            </th>
+            <th>
+                MES
+            </th>
+            <th>
+                AÑO
+            </th>
+            <th>
+                CONDUCTOR
+            </th>
+            <th>
+                USUARIO
+            </th>
+           
+            <th>OPCIONES</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Monto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Detalle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaPago)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Numero)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Mes)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Anio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Conductor.NombreCompleto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Usuario.NombreCompleto)
+                </td>
+                <td>
+                    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.PagoId">Editar</a> 
+                    <a class="btn btn-info" asp-action="Details" asp-route-id="@item.PagoId">Detalles</a> 
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.PagoId">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

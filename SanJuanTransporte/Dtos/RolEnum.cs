@@ -2,7 +2,7 @@
 {
     public enum RolEnum
     {
-        Administardor = 1,
+        Administrador = 1,
         Secretaria
     }
 }

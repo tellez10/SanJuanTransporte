@@ -1,0 +1,41 @@
+﻿@model SanJuanTransporte.Models.Usuario
+
+@{
+    ViewData["Title"] = "Reporte";
+}
+
+<h1>REPORTE CIERRE DE CAJA</h1>
+
+<div class="user-info">
+    <p><strong>Usuario:</strong> @Html.DisplayFor(model => model.Email)</p>
+    <p><strong>Nombre:</strong> @Html.DisplayFor(model => model.NombreCompleto)</p>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>N°</th>
+            <th>NUMERO</th>
+            <th>MES</th>
+            <th>AÑO</th>
+            <th>MONTO BS.</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            int nro = 1;
+        }
+        @foreach (var item in Model.Pagos!)
+        {
+            <tr>
+                <td>@nro</td>
+                <td>@Html.DisplayFor(modelItem => item.Numero)</td>
+                <td>@Html.DisplayFor(modelItem => item.Mes)</td>
+                <td>@Html.DisplayFor(modelItem => item.Anio)</td>
+                <td>@Html.DisplayFor(modelItem => item.Monto)</td>
+            </tr>
+
+            nro++;
+        }
+    </tbody>
+</table>

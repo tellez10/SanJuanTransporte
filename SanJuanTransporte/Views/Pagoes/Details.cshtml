@@ -1,0 +1,76 @@
+﻿@model SanJuanTransporte.Models.Pago
+
+@{
+    ViewData["Title"] = "Detalles del Pago";
+}
+
+<h1>Detalles del Pago</h1>
+
+<div>
+    <h4>Pago</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Monto
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Monto)
+        </dd>
+
+        <dt class="col-sm-2">
+            Detalle
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Detalle)
+        </dd>
+
+        <dt class="col-sm-2">
+            Fecha de Pago
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FechaPago)
+        </dd>
+
+        <dt class="col-sm-2">
+            Número
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Numero)
+        </dd>
+
+        <dt class="col-sm-2">
+            Mes
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Mes)
+        </dd>
+
+        <dt class="col-sm-2">
+            Año
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Anio)
+        </dd>
+
+        <dt class="col-sm-2">
+            Conductor
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Conductor.NombreCompleto)
+        </dd>
+
+        <dt class="col-sm-2">
+            Usuario
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Usuario.NombreCompleto)
+        </dd>
+    </dl>
+</div>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.PagoId" class="btn btn-warning">Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la Lista</a>
+    <a asp-action="GenerarRecibo" asp-route-pagoId="@Model.PagoId" class="btn btn-primary">Generar Recibo</a>
+
+</div>

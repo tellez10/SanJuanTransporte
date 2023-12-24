@@ -1,0 +1,64 @@
+﻿@model IEnumerable<SanJuanTransporte.Models.Usuario>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>USUARIOS</h1>
+
+<form asp-action="Search" asp-controller="Usuarios" method="get">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" name="searchTerm" placeholder="BUSCAR USUARIOS">
+        <div class="input-group-append">
+            <button class="btn btn-primary" type="submit">Buscar</button>
+        </div>
+    </div>
+</form>
+
+<p>
+    <a asp-action="Create" class="btn btn-success">Crear Nuevo</a>
+</p>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                CORREO ELECTRONICO
+            </th>
+            <th>
+                CONTRASEÑA
+            </th>
+            <th>
+                NOMBRE COMPLETO
+            </th>
+            <th>
+                ROL
+            </th>
+            <th>OPCIONES</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Password)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombreCompleto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rol)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.UsuarioId" class="btn btn-info">Editar</a>
+                    <a asp-action="Details" asp-route-id="@item.UsuarioId" class="btn btn-primary">Detalles</a>
+                    <a asp-action="Delete" asp-route-id="@item.UsuarioId" class="btn btn-danger">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
